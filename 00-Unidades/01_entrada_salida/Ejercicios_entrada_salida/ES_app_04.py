@@ -33,7 +33,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        nombre = prompt("Nombre", "Ingrese su nombre")
+        #self.txt_nombre.delete(0, 30) borrar hasta el caracter 30
+        #self.txt_nombre.delete(0, len(self.txt_nombre.get())-1) borrar hasta el length del contenido del textbox
+        #self.txt_nombre.delete(0, tkinter.END) funcion de customtkinter
+        self.txt_nombre.delete(0, "end")
+
+        self.txt_nombre.insert(0, nombre)
         
     
 if __name__ == "__main__":
