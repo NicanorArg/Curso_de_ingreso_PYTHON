@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Nicanor
+apellido: Gafloat
 ---
 TP: ES_Facturaciones
 ---
@@ -52,14 +52,38 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        numero_1 = self.txt_importe_1.get()
+        numero_2 = self.txt_importe_2.get()
+        numero_3 = self.txt_importe_3.get()
+        total = float(numero_1) + float(numero_2) + float(numero_3)
+
+        mensaje = "El total es de " + str(total) + " pesos."
+        alert("Total", mensaje)
 
     def btn_promedio_on_click(self):
-        pass
+        numero_1 = self.txt_importe_1.get()
+        numero_2 = self.txt_importe_2.get()
+        numero_3 = self.txt_importe_3.get()
+        total = float(numero_1) + float(numero_2) + float(numero_3)
+        promedio = total / 3
+
+        mensaje = "El promedio es de " + str(promedio) + "Pesos"
+        alert("Promedio", mensaje)
 
     def btn_total_iva_on_click(self):
-        pass      
+        IVA = 0.21
+        numero_1 = self.txt_importe_1.get()
+        numero_2 = self.txt_importe_2.get()
+        numero_3 = self.txt_importe_3.get()
+        total = float(numero_1) + float(numero_2) + float(numero_3)
+        aumento_iva = total * IVA
+        importe_final = total + aumento_iva
+
+        mensaje = f"Luego de aplicar un recargo de {aumento_iva} pesos por IVA, el importe final es de {importe_final}"
+        alert("Total c/IVA", mensaje)
     
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

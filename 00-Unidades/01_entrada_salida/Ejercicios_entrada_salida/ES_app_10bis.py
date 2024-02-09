@@ -43,7 +43,7 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         importe = self.txt_importe.get()
         porcentaje_descuento = self.txt_descuento.get()
-        importe_descontado = int(importe) * int(porcentaje_descuento) / 100
+        importe_descontado = float(importe) * int(porcentaje_descuento) / 100
         importe_final = int(importe) - importe_descontado
 
         mensaje = f"Tras aplicar un descuento del {porcentaje_descuento}%, su importe final es de {importe_final} pesos."

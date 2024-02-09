@@ -34,8 +34,8 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         sueldo = self.txt_sueldo.get()
-        aumento = int(sueldo) * 0.15
-        salario_aumentado = int(sueldo) + aumento
+        aumento = float(sueldo) * 0.15
+        salario_aumentado = float(sueldo) + aumento
         mensaje = f"Tras un aumento de {aumento} pesos, su nuevo sueldo es {salario_aumentado}"
         alert("Aumento salarial", mensaje)
 
