@@ -6,7 +6,7 @@ import customtkinter
 
 '''
 nombre: Nicanor
-apellido: Gafloat
+apellido: Gatti
 ---
 TP: ES_Facturaciones
 ---
