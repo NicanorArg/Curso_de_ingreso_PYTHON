@@ -33,8 +33,14 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
-
+        altura = self.txt_edad.get()
+        altura = float(altura)
+        ALTURA_MINIMA = 1.80
+        if altura > ALTURA_MINIMA:
+            mensaje = "Si pivot"
+        else:
+            mensaje = "No pivot"
+        alert("Pivot", mensaje)
 
 if __name__ == "__main__":
     app = App()

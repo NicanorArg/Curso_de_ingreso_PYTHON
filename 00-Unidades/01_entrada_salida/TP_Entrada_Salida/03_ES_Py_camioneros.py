@@ -1,4 +1,5 @@
 import tkinter
+import math
 from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
@@ -50,7 +51,7 @@ class App(customtkinter.CTk):
         toneladas_carga = self.txt_toneladas.get()
         kg_carga = int(toneladas_carga) * 1000
         cantidad_camiones = int(kg_carga) / CARGA_CAMION
-        cantidad_camiones = round(cantidad_camiones)
+        cantidad_camiones = math.ceil(cantidad_camiones)
         mensaje = "Hacen falta " + str(cantidad_camiones) + " camiones."
         alert("Cantidad de camiones", mensaje)
 
