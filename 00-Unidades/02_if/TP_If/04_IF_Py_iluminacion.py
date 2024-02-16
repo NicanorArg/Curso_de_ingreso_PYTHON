@@ -50,20 +50,25 @@ class App(customtkinter.CTk):
         cantidad_lamparas = self.combobox_cantidad.get()
         cantidad_lamparas = int(cantidad_lamparas)
         marca = self.combobox_marca.get()
+        importe = cantidad_lamparas * PRECIO_LAMPARA
+        print(importe)
         descuento = 1
 
-        if cantidad_lamparas > 6:
+        if cantidad_lamparas >= 6:
             descuento = 0.5
+
         elif cantidad_lamparas == 5:
             if marca == "ArgentinaLuz":
                 descuento = 0.6
             else:
                 descuento = 0.7
+
         elif cantidad_lamparas == 4:
             if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
                 descuento = 0.75
             else:
                 descuento = 0.8
+                
         elif cantidad_lamparas == 3:
             if marca == "ArgentinaLuz":
                 descuento = 0.85
@@ -72,7 +77,6 @@ class App(customtkinter.CTk):
             else:
                 descuento = 0.95
         
-        importe = cantidad_lamparas * PRECIO_LAMPARA
         importe_final = importe * descuento
         
         if importe_final > 4000:
