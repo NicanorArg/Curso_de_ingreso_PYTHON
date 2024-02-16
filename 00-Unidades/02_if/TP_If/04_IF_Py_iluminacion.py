@@ -58,24 +58,21 @@ class App(customtkinter.CTk):
             descuento = 0.5
 
         elif cantidad_lamparas == 5:
+            descuento = 0.7
             if marca == "ArgentinaLuz":
                 descuento = 0.6
-            else:
-                descuento = 0.7
 
         elif cantidad_lamparas == 4:
+            descuento = 0.8
             if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
                 descuento = 0.75
-            else:
-                descuento = 0.8
                 
         elif cantidad_lamparas == 3:
+            descuento = 0.95
             if marca == "ArgentinaLuz":
                 descuento = 0.85
             elif marca == "FelipeLamparas":
                 descuento = 0.90
-            else:
-                descuento = 0.95
         
         importe_final = importe * descuento
         

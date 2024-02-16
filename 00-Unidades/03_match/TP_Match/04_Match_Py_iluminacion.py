@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Nicanor
+apellido: Gatti
 ---
 TP: Iluminación
 ---
@@ -71,10 +71,7 @@ class App(customtkinter.CTk):
                         descuento = 10
                     case _:
                         descuento = 5
-            case 2:
-                descuento = 0
-
-            case 1:
+            case 1 | 2:
                 descuento = 0
             
         importe_descontado = importe * descuento / 100
